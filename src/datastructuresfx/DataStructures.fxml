@@ -3,10 +3,12 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -25,30 +27,38 @@
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <JFXButton buttonType="RAISED" layoutX="39.0" layoutY="158.0" prefHeight="40.0" prefWidth="165.0" ripplerFill="BLACK" style="-fx-background-color: #0E284B; -fx-background-radius: 8px;" text="⤓ Push" textFill="WHITE">
+                              <JFXButton fx:id="spush" buttonType="RAISED" layoutX="39.0" layoutY="206.0" onAction="#stackPush" prefHeight="40.0" prefWidth="165.0" ripplerFill="BLACK" style="-fx-background-color: #0E284B; -fx-background-radius: 8px;" text="Push ⤓" textFill="WHITE">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </JFXButton>
-                              <JFXTextField alignment="CENTER" labelFloat="true" layoutX="25.0" layoutY="99.0" prefHeight="44.0" prefWidth="193.0" promptText="Push This ⤓" />
-                              <JFXButton buttonType="RAISED" layoutX="39.0" layoutY="244.0" prefHeight="40.0" prefWidth="165.0" ripplerFill="BLACK" style="-fx-background-color: #0E284B; -fx-background-radius: 8px;" text="⤒ Pop" textFill="WHITE">
+                              <JFXTextField fx:id="sdata" alignment="CENTER" labelFloat="true" layoutX="25.0" layoutY="125.0" prefHeight="44.0" prefWidth="193.0" promptText="Push This ⤓" />
+                              <JFXButton fx:id="spop" buttonType="RAISED" layoutX="39.0" layoutY="292.0" onAction="#stackPop" prefHeight="40.0" prefWidth="165.0" ripplerFill="BLACK" style="-fx-background-color: #0E284B; -fx-background-radius: 8px;" text="Pop  ⤒" textFill="WHITE">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton buttonType="RAISED" layoutX="39.0" layoutY="330.0" prefHeight="40.0" prefWidth="165.0" ripplerFill="BLACK" style="-fx-background-color: #0E284B; -fx-background-radius: 8px;" text="Empty" textFill="WHITE">
+                              <JFXButton fx:id="sempty" buttonType="RAISED" layoutX="39.0" layoutY="378.0" onAction="#isStackEmpty" prefHeight="40.0" prefWidth="165.0" ripplerFill="BLACK" style="-fx-background-color: #0E284B; -fx-background-radius: 8px;" text="؟  Empty" textFill="WHITE">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton buttonType="RAISED" layoutX="39.0" layoutY="407.0" prefHeight="40.0" prefWidth="165.0" ripplerFill="BLACK" style="-fx-background-color: #0E284B; -fx-background-radius: 8px;" text="Peek" textFill="WHITE">
+                              <JFXButton fx:id="speek" buttonType="RAISED" layoutX="39.0" layoutY="455.0" onAction="#stackPeek" prefHeight="40.0" prefWidth="165.0" ripplerFill="BLACK" style="-fx-background-color: #0E284B; -fx-background-radius: 8px;" text="Peek  " textFill="WHITE">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
                               </JFXButton>
                            </children>
                         </AnchorPane>
-                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <Pane>
+                           <children>
+                              <ScrollPane layoutX="207.0">
+                                 <content>
+                                    <TilePane fx:id="stackDS" alignment="TOP_CENTER" hgap="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="738.0" prefWidth="200.0" tileAlignment="TOP_CENTER" vgap="2.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </Pane>
                     </items>
                   </SplitPane>
                </content>
