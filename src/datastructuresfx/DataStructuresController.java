@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.TilePane;
 
 /**
@@ -17,9 +18,9 @@ import javafx.scene.layout.TilePane;
  * @author bruno
  */
 public class DataStructuresController implements Initializable {
-
+    
     private static int size = 0;
-
+    
     @FXML
     private JFXButton spush;
     @FXML
@@ -34,12 +35,12 @@ public class DataStructuresController implements Initializable {
     private Label ssize;
     @FXML
     private ScrollPane sspane;
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        
     }
-
+    
     @FXML
     private void stackPush(ActionEvent event) {
         String data = sdata.getText();
@@ -51,10 +52,11 @@ public class DataStructuresController implements Initializable {
         button.setMinWidth(224);
         button.setMaxWidth(224);
         button.setStyle("-fx-background-color: wheat;");
+        button.setTooltip(new Tooltip(data));
         stackDS.getChildren().add(0, button);
         sdata.clear();
     }
-
+    
     @FXML
     private void stackPop(ActionEvent event) {
         if (size == 0) {
@@ -63,9 +65,9 @@ public class DataStructuresController implements Initializable {
         stackDS.getChildren().remove(0);
         ssize.setText(Integer.toString(--size));
     }
-
+    
     @FXML
     private void stackPeek(ActionEvent event) {
     }
-
+    
 }
