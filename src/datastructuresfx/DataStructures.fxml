@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="732.0" prefWidth="1241.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="datastructuresfx.DataStructuresController">
@@ -20,7 +23,31 @@
                               <Text layoutX="24.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Stack class represents a last-in-first-out (LIFO) stack of objects. It extends class Vector with five operations that allow a vector to be treated as a stack. The usual push and pop operations are provided, as well as a method to peek at the top item on the stack, a method to test for whether the stack is empty, and a method to search the stack for an item and discover how far it is from the top.When a stack is first created, it contains no items.A more complete and consistent set of LIFO stack operations is provided by the Deque interface and its implementations, which should be used in preference to this class. For example:      Deque&lt;Integer&gt; stack = new ArrayDeque&lt;Integer&gt;();The Stack class represents a last-in-first-out (LIFO) stack of objects. It extends class Vector with five operations that allow a vector to be treated as a stack. The usual push and pop operations are provided, as well as a method to peek at the top item on the stack, a method to test for whether the stack is empty, and a method to search the stack for an item and discover how far it is from the top.When a stack is first created, it contains no items.A more complete and consistent set of LIFO stack operations is provided by the Deque interface and its implementations, which should be used in preference to this class. For example:      Deque&lt;Integer&gt; stack = new ArrayDeque&lt;Integer&gt;();A control that has two or more sides, each separated by a divider, which can be dragged by the user to give more space to one of the sides, resulting in the other side shrinking by an equal amount.Nodes can be positioned horizontally next to each other, or stacked vertically. This can be controlled by setting the orientationProperty().The dividers in a SplitPane have the following behavior " wrappingWidth="317.7294921875" />
                            </children>
                         </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <JFXButton buttonType="RAISED" layoutX="39.0" layoutY="158.0" prefHeight="40.0" prefWidth="165.0" ripplerFill="BLACK" style="-fx-background-color: #0E284B; -fx-background-radius: 8px;" text="⤓ Push" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXTextField alignment="CENTER" labelFloat="true" layoutX="25.0" layoutY="99.0" prefHeight="44.0" prefWidth="193.0" promptText="Push This ⤓" />
+                              <JFXButton buttonType="RAISED" layoutX="39.0" layoutY="244.0" prefHeight="40.0" prefWidth="165.0" ripplerFill="BLACK" style="-fx-background-color: #0E284B; -fx-background-radius: 8px;" text="⤒ Pop" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" layoutX="39.0" layoutY="330.0" prefHeight="40.0" prefWidth="165.0" ripplerFill="BLACK" style="-fx-background-color: #0E284B; -fx-background-radius: 8px;" text="Empty" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" layoutX="39.0" layoutY="407.0" prefHeight="40.0" prefWidth="165.0" ripplerFill="BLACK" style="-fx-background-color: #0E284B; -fx-background-radius: 8px;" text="Peek" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
                         <Pane prefHeight="200.0" prefWidth="200.0" />
                     </items>
                   </SplitPane>
