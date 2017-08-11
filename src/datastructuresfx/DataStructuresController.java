@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.TilePane;
 
 /**
@@ -31,6 +32,8 @@ public class DataStructuresController implements Initializable {
     private JFXTextField sdata;
     @FXML
     private Label ssize;
+    @FXML
+    private ScrollPane sspane;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -45,7 +48,8 @@ public class DataStructuresController implements Initializable {
         }
         ssize.setText(Integer.toString(++size));
         Button button = new Button(data);
-        button.setMinWidth(stackDS.widthProperty().doubleValue());
+        button.setMinWidth(224);
+        button.setMaxWidth(224);
         button.setStyle("-fx-background-color: wheat;");
         stackDS.getChildren().add(0, button);
         sdata.clear();
