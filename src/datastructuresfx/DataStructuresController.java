@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.TilePane;
 
 /**
@@ -23,17 +24,17 @@ public class DataStructuresController implements Initializable {
     @FXML
     private JFXButton spop;
     @FXML
-    private JFXButton sempty;
-    @FXML
     private JFXButton speek;
     @FXML
     private TilePane stackDS;
     @FXML
     private JFXTextField sdata;
+    @FXML
+    private Label ssize;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
     }
 
     @FXML
@@ -42,11 +43,12 @@ public class DataStructuresController implements Initializable {
         if (data.length() < 1) {
             return;
         }
-        size++;
+        ssize.setText(Integer.toString(++size));
         Button button = new Button(data);
         button.setMinWidth(stackDS.widthProperty().doubleValue());
         button.setStyle("-fx-background-color: wheat;");
         stackDS.getChildren().add(0, button);
+        sdata.clear();
     }
 
     @FXML
@@ -55,11 +57,7 @@ public class DataStructuresController implements Initializable {
             return;
         }
         stackDS.getChildren().remove(0);
-        size--;
-    }
-
-    @FXML
-    private void isStackEmpty(ActionEvent event) {
+        ssize.setText(Integer.toString(--size));
     }
 
     @FXML
